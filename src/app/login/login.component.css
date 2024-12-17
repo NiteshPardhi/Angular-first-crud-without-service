@@ -1,0 +1,31 @@
+.login_box{
+    margin-left: 35%;
+    margin-top: 10%;
+    /* background-color: rgb(19, 228, 228); */
+    margin-right: 35%;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+.main_heading{
+    color: brown;
+    font-weight: 400;
+    padding-left: 28px;
+    padding-top: 20px;
+}
+.heading_login{
+    color: rgb(7, 121, 32);
+    font-weight: 700;
+    padding-left: 45%;
+}
+._input{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.btn{
+    margin-left: 45%;
+    margin-bottom: 15px;
+}
+.form-text{
+    color: red;
+}

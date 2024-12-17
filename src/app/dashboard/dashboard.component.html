@@ -1,0 +1,8 @@
+ <form [formGroup]="form">
+    <label for="from_date">From Date:</label>
+    <input type="date" id="from_date" name="from_date" class="datepicker" formControlName="from_date">
+    <label for="to_date">To Date:</label>
+    <input type="date" id="to_date" name="to_date" class="datepicker" formControlName="to_date">  
+ </form>
+
+  <button (click)="getData()">submit</button>

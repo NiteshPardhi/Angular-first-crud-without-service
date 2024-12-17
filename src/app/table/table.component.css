@@ -1,0 +1,32 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+
+.btn-primary {
+    float: right;
+}
+
+.thead {
+    height: 30px;
+}
+
+.container-fluid {
+    background-image: url('../../assets/img3.jpg');
+    padding-bottom: 200px;
+}
+
+.filter-input {
+    width: 300px;
+}
+
+td:hover {
+    cursor: pointer;
+    background-color: blue;
+    color: red;
+}
+
+.my-icon {
+    font-size: 20px;
+    color: lightcyan;
+    cursor: pointer;
+    margin-left: 10px;
+}

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <h1 class="display-2 mt-3 p-4 text-light">Employee Details</h1>
+
+    <input type="text" class="filter-input p-2" placeholder="Search...By Name" (keyup)="searchRow($event)">
+
+    <button class="btn btn-primary" routerLink="/register">Add New Employee</button>
+
+    <table class="table table-bordered mt-3 text-center">
+        <thead class="thead bg-secondary text-light">
+            <tr>
+                <th>SrNo</th>
+                <th>First Name <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i></th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="table-info">
+            <tr *ngFor="let employee of arrayOfEmployee | paginate: { itemsPerPage: 4, currentPage: p }; let i= index">
+                <td>{{employee.id}}</td>
+                <td>{{employee.fName}}</td>
+                <td>{{employee.lName}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.mobileNo}}</td>
+                <td>
+                    <button class="btn bg-primary text-light" (click)="editRow(employee.id)">Edit</button>
+                </td>
+                <td>
+                    <button class="btn bg-danger text-light" (click)="deleteRow(employee.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<!-- delete popop modal -->
+<!-- <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title fw-bold">Delete Modal Popup</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure to delete data of.... <span class="h1 text-success"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger">OK</button>
+                <button class="btn btn-secondary">Cancel </button>
+            </div>
+        </div>
+    </div>
+</div> -->

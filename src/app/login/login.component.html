@@ -1,0 +1,27 @@
+<div class="login_box">
+    <h2 class="main_heading">Everest Intruments PVT LTD</h2>
+    <h4 class="heading_login">Login</h4>
+    <form [formGroup]="loginForm">
+        <div class="_input">
+            <label class="fw-bold" for="user">User Name</label>
+            <input type="text" class="form-control" placeholder="User Name" formControlName="userName">
+            <div class="form-text">
+                <div *ngIf="loginForm.get('userName')?.hasError('required') && (loginForm.get('userName')?.touched || submitted)">
+                    User Name is required
+                </div>
+            </div>
+        </div>
+        <div class="_input">
+            <label class="fw-bold" for="password">Password</label>
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <div class="form-text">
+                <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.touched || submitted)">
+                    Password is required
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <button class="btn btn-primary" (click)="onLogin()">Login</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.container-fluid{
+    background-image: url('../../assets/img2.jpg');
+    padding-bottom: 300px;
+}
+.box{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.form-text{
+    color: yellow;
+    font-size: 20px;
+}
+.form-label{
+    font-size: 20px;
+    color: rgb(3, 3, 106);
+    font-weight: bold;
+}
+input{
+    padding: 17px;
+}

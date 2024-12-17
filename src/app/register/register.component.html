@@ -1,0 +1,96 @@
+<div class="container-fluid">
+   
+   <div class="box p-4">
+    <div>
+        <h1 class="display-4 text-light">Registration Form</h1>
+    </div>
+    <form [formGroup]="registerForm">
+        <div class="row mt-5">  
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">First Name</label>
+                <input type="fName" class="form-control" placeholder="First Name" formControlName="fName">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('fName')?.hasError('required') && (registerForm.get('fName')?.touched || submitted)">
+                        First Name is required
+                    </div>
+                    <div *ngIf="registerForm.get('fName')?.hasError('pattern') && (registerForm.get('fName')?.touched || submitted)">
+                        Only Characters are required
+                    </div>
+                </div>
+            </div>
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" formControlName="lName">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('lName')?.hasError('required') && (registerForm.get('lName')?.touched || submitted)">
+                        Last Name is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Email address</label>
+                <input type="email" class="form-control" placeholder="Enter Email" formControlName="email">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('email')?.hasError('required') && (registerForm.get('email')?.touched || submitted)">
+                        Email is required
+                    </div>
+                </div>
+            </div>
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Mobile Number</label>
+                <input type="text" class="form-control" placeholder="Mobile Number" formControlName="mobileNo">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('mobileNo')?.hasError('required') && (registerForm.get('mobileNo')?.touched || submitted)">
+                        Mobile Number is required
+                    </div>
+                    <div *ngIf="registerForm.get('mobileNo')?.hasError('pattern') && (registerForm.get('mobileNo')?.touched || submitted)">
+                        Mobile Number must be 10 digit number
+                    </div>
+                </div>
+            </div>
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Employee ID</label>
+                <input type="text" class="form-control" placeholder="Employee ID" formControlName="id">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('id')?.hasError('required') && (registerForm.get('id')?.touched || submitted)">
+                        ID is required
+                    </div>
+                    <div *ngIf="registerForm.get('id')?.hasError('pattern') && (registerForm.get('id')?.touched || submitted)">
+                        Only Numbers are required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Password</label>
+                <input type="text" class="form-control" placeholder="First Name" formControlName="password">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('password')?.hasError('required') && (registerForm.get('password')?.touched || submitted)">
+                        Password is required
+                    </div>
+                </div>
+            </div>
+            <div class="col form-group mb-3">
+                <label for="" class="form-label">Confirm Password</label>
+                <input type="text" class="form-control" placeholder="First Name"formControlName="confirmPassword">
+                <div class="form-text">
+                    <div *ngIf="registerForm.get('confirmPassword')?.hasError('required') && (registerForm.get('confirmPassword')?.touched || submitted)">
+                        Confirm Password is required
+                    </div>
+                    <div *ngIf="registerForm.get('confirmPassword')?.hasError('matching') && (registerForm.get('confirmPassword')?.touched || submitted)">
+                        Confirm Password must be same
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="mt-5">
+        <button class="btn btn-primary" (click)="addData()">Add Data</button>
+        <button class="btn btn-danger mx-4" (click)="resetData()">Reset</button>
+        <button class="btn btn-warning" routerLink="/login">Back</button>
+    </div>
+   </div>
+</div>
